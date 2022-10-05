@@ -17,7 +17,22 @@
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите исходный текст: \n");
+            var a = Console.ReadLine();
+            Console.WriteLine($"Исходный текст: \n{a}\n");
 
+            Console.WriteLine("\nВведите заменяемый текст: ");
+            var c = Console.ReadLine();
+            Console.WriteLine("\nВведите шаблон заметы: ");
+            var b = Console.ReadLine();
+
+
+            a = a.Replace(c, b);
+
+            Console.WriteLine("\nТекст с заменой:");
+            Console.WriteLine($"{a}");
+
+            Console.ReadLine();
         }
     }
 }
