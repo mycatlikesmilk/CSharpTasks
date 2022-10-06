@@ -15,7 +15,24 @@
 
         static void Main(string[] args)
         {
+            string vhod = Console.ReadLine();
 
+            char razdelitel = ' ';
+
+            string[] chisla = vhod.Split(razdelitel);
+
+            int[] zaparsili = new int[chisla.Length];
+
+            for (int i = 0; i < chisla.Length; i++)
+            {
+                zaparsili[i] = int.Parse(chisla[i]);
+            }
+
+            int vihod = zaparsili[0] + zaparsili[1];
+
+            Console.WriteLine(vihod);
+
+            Console.ReadLine();
         }
     }
 }
