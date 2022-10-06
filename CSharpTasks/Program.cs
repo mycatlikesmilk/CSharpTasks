@@ -28,7 +28,57 @@
         */
         static void Main(string[] args)
         {
+            double sum;
 
+            Console.Write("Введите метраж квартиры (м^2) с точностью до десятых: ");
+            var square = Console.ReadLine();
+            double squareD = Convert.ToDouble(square);
+            double squarePrice = squareD * 44.25;
+
+            Console.Write("Введите этаж квартиры: ");
+            var floor = Console.ReadLine();
+            double floorD = Convert.ToDouble(floor);
+            double floorPrice = squarePrice * (floorD * 0.04);
+
+            Console.Write("Введите количество электроэнергии (кВт) с точностью до сотых: ");
+            var elec = Console.ReadLine();
+            double elecD = Convert.ToDouble(elec);
+            double elecPrice = elecD * 4.70;
+
+            Console.Write("Введите количество горячей воды (м^3): ");
+            var hotWater = Console.ReadLine();
+            double hotWaterD = Convert.ToDouble(hotWater);
+            double hotWaterPrice = hotWaterD * 80.15;
+
+            Console.Write("Введите количество холодной воды (м^3): ");
+            var coldWater = Console.ReadLine();
+            double coldWaterD = Convert.ToDouble(coldWater);
+            double coldWaterPrice = coldWaterD * 48.72;
+
+            if (floorD > 12)
+            {
+
+            }
+            else
+            {
+                Console.Write("Введите количество потребляемого газа (м^3) с точностью до десятых: ");
+                var gas = Console.ReadLine();
+                double gasD = Convert.ToDouble(gas);
+                double gasPrice = gasD * 2.42;
+            }
+
+            Console.Write("Введите количество отопления (гКалл) с точностью до десятых: ");
+            var hot = Console.ReadLine();
+            double hotD = Convert.ToDouble(hot);
+            double hotPrice = hotD * 1273;
+
+            Console.Write("Подключен ли интернет? (да/нет): ");
+            var inet = Console.ReadLine();
+
+            if (inet == "да" || inet == "Да" || inet == "ДА" || inet == "дА"){
+                sum = squarePrice + floorPrice + elecPrice + hotWaterPrice + coldWaterPrice + hotPrice + 400;
+                Console.Write($"Итоговая сумма: {}")
+            }
         }
     }
 }
