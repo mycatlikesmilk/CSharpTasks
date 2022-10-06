@@ -17,7 +17,22 @@
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите текст, в котором заменят выбранные переменные:");
 
+            var text = Console.ReadLine();
+
+            Console.WriteLine("Введите заменяемые символы:");
+
+            var shablon = Console.ReadLine();
+
+            Console.WriteLine("Введите на что будут заменяться указанные символы:");
+
+            var zamena = Console.ReadLine();
+
+            String yaKot = text;
+            yaKot = yaKot.Replace(shablon, zamena);
+            Console.WriteLine("Готовый вариант: '{0}'", yaKot);
+            Console.ReadLine();
         }
     }
 }
