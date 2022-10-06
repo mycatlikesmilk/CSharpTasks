@@ -19,7 +19,19 @@
 
         static void Main(string[] args)
         {
+            int origWidth, width;
 
+            origWidth = Console.WindowWidth;
+
+            width = origWidth / 2;
+
+            string vvedi = Console.ReadLine();
+
+            int kostil = vvedi.Length / 2;
+
+            Console.WriteLine(vvedi.PadLeft(width + kostil));
+
+            Console.ReadLine();
         }
     }
 }
