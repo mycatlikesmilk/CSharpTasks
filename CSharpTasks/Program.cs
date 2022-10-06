@@ -21,7 +21,45 @@
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите значение a: ");
+            var a = Console.ReadLine();
 
+            Console.WriteLine("Введите значение b: ");
+            var b = Console.ReadLine();
+
+            Console.WriteLine("Введите значение с: ");
+            var c = Console.ReadLine();
+
+            double ad = Convert.ToDouble(a);
+            double bd = Convert.ToDouble(b);
+            double cd = Convert.ToDouble(c);
+
+            double disc = Math.Pow(bd, 2) - 4 * (ad) * (cd);
+
+            if (disc == 0)
+            {
+                double x1 = ((-bd) + (Math.Sqrt(disc))) / (2d * ad);
+                Console.WriteLine($"Входные данные:\na = {a}\nb = {b}\nc = {c}");
+                Console.WriteLine("Выходные данные: ");
+                Console.WriteLine($"x = {x1}");
+            }
+            else if (disc > 0)
+            {
+                double x1 = ((-bd) + (Math.Sqrt(disc))) / (2d * ad);
+                double x2 = ((-bd) - (Math.Sqrt(disc))) / (2d * ad);
+                Console.WriteLine($"Входные данные:\na = {a}\nb = {b}\nc = {c}");
+                Console.WriteLine("Выходные данные: ");
+                Console.WriteLine($"x1 = {x1}");
+                Console.WriteLine($"x2 = {x2}");
+            }
+            else if (disc < 0)
+            {
+                Console.WriteLine($"Входные данные:\na = {a}\nb = {b}\nc = {c}");
+                Console.WriteLine("Выходные данные: ");
+                Console.WriteLine("Корней нет");
+            }
+
+            Console.ReadLine();
         }
     }
 }
