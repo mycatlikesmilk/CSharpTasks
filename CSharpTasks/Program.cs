@@ -84,7 +84,7 @@
                 copies = copies * 100;
 
 
-                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies.ToString("N0")} копеек");
             }
             else if (inet == "no" || inet == "No" || inet == "NO" || inet == "nO" )
             {
@@ -93,7 +93,7 @@
                 var copies = sum - rubles;
                 copies = copies * 100;
 
-                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies.ToString("N0")} копеек");
             }
             else
             {
@@ -103,7 +103,7 @@
                 var copies = sum - rubles;
                 copies = copies * 100;
 
-                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies.ToString("N0")} копеек");
             }
 
             Console.ReadLine();
