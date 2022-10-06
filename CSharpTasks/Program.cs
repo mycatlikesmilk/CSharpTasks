@@ -28,6 +28,7 @@
         */
         static void Main(string[] args)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             double sum;
 
             Console.Write("Введите метраж квартиры (м^2) с точностью до десятых: ");
@@ -55,7 +56,7 @@
             double coldWaterD = Convert.ToDouble(coldWater);
             double coldWaterPrice = coldWaterD * 48.72;
 
-            if (floorD > 12)
+            if (floorD >= 12)
             {
 
             }
@@ -75,10 +76,37 @@
             Console.Write("Подключен ли интернет? (да/нет): ");
             var inet = Console.ReadLine();
 
-            if (inet == "да" || inet == "Да" || inet == "ДА" || inet == "дА"){
+            if (inet == "yes" || inet == "Yes" || inet == "YES" || inet == "yES" || inet == "YEs" || inet == "yEs" || inet == "yeS")
+            {
                 sum = squarePrice + floorPrice + elecPrice + hotWaterPrice + coldWaterPrice + hotPrice + 400;
-                Console.Write($"Итоговая сумма: {}")
+                var rubles = Math.Truncate(sum);
+                var copies = sum - rubles;
+                copies = copies * 100;
+
+
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
             }
+            else if (inet == "no" || inet == "No" || inet == "NO" || inet == "nO" )
+            {
+                sum = squarePrice + floorPrice + elecPrice + hotWaterPrice + coldWaterPrice + hotPrice;
+                var rubles = Math.Truncate(sum);
+                var copies = sum - rubles;
+                copies = copies * 100;
+
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
+            }
+            else
+            {
+                Console.WriteLine("Ваш ответ не распознан, ответ по-умолчанию: да");
+                sum = squarePrice + floorPrice + elecPrice + hotWaterPrice + coldWaterPrice + hotPrice + 400;
+                var rubles = Math.Truncate(sum);
+                var copies = sum - rubles;
+                copies = copies * 100;
+
+                Console.Write($"Итоговая сумма: {rubles} рубля(ей) {copies} копеек");
+            }
+
+            Console.ReadLine();
         }
     }
 }
