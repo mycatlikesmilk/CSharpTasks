@@ -56,11 +56,7 @@
             double coldWaterD = Convert.ToDouble(coldWater);
             double coldWaterPrice = coldWaterD * 48.72;
 
-            if (floorD >= 12)
-            {
-
-            }
-            else
+            if (floorD <= 11)
             {
                 Console.Write("Введите количество потребляемого газа (м^3) с точностью до десятых: ");
                 var gas = Console.ReadLine();
