@@ -14,7 +14,15 @@
 
         static void Main(string[] args)
         {
+            string vvedi = Console.ReadLine();
 
+            double chislo = double.Parse(vvedi);
+
+            string vivedi = chislo.ToString("N10");
+
+            Console.WriteLine(vivedi);
+
+            Console.ReadLine();
         }
     }
 }
