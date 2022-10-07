@@ -21,7 +21,31 @@
 
         static void Main(string[] args)
         {
+            string a = Console.ReadLine();
+            string b = Console.ReadLine();
+            string c = Console.ReadLine();
 
+            double aParse = int.Parse(a);
+            double bParse = int.Parse(b);
+            double cParse = int.Parse(c);
+
+            double D = Math.Pow(bParse, 2) - 4 * aParse * cParse;
+
+            if (D > 0)
+            {
+                Console.WriteLine((-bParse + Math.Sqrt(D)) / (2 * aParse));
+                Console.WriteLine((-bParse - Math.Sqrt(D)) / (2 * aParse));
+            }
+            else if (D == 0)
+            {
+                Console.WriteLine(-bParse / (2 * aParse));
+            }
+            else if (D < 0)
+            {
+                Console.WriteLine("Дискриминант отрицательный, корней нет");
+            }
+
+            Console.ReadLine();
         }
     }
 }
