@@ -28,7 +28,66 @@
         */
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите метраж квартиры c точностью до десятых(м^2):");
+            string apartArea = Console.ReadLine();
+            double PRSapartArea = double.Parse(apartArea);
 
+            Console.WriteLine("Введите этаж квартиры:");
+            string floorNumb = Console.ReadLine();
+            double PRSfloorNumb = double.Parse(floorNumb);
+
+            Console.WriteLine("Введите количество электроэнергии с точностью до сотых(кВт):");
+            string electricity = Console.ReadLine();
+            double PRSelectricity = double.Parse(electricity);
+
+            Console.WriteLine("Введите количество теплой воды с точностью до целых(м^3):");
+            string hotWater = Console.ReadLine();
+            double PRShotWater = double.Parse(hotWater);
+
+            Console.WriteLine("Введите холодной воды с точностью до целых(м^3):");
+            string coldWater = Console.ReadLine();
+            double PRScoldWater = double.Parse(coldWater);
+
+            double PRSgas = 0;
+            if (PRSfloorNumb < 12)
+            {
+                Console.WriteLine("Введите количество газа с точностью до десятых(м^3):");
+                string gas = Console.ReadLine();
+                PRSgas = double.Parse(gas);
+            }
+
+            Console.WriteLine("Введите количество отопления с точностью до десятых(гКалл):");
+            string heating = Console.ReadLine();
+            double PRSheating = double.Parse(heating);
+
+            Console.WriteLine("Интернет подключен (напишите да, либо оставьте строку пустой, если интернет не подключен)?");
+            string internet = Console.ReadLine();
+
+            bool internetPay = !string.IsNullOrWhiteSpace(internet) && internet[0] == 'д' && internet[1] == 'а';
+
+            if (internetPay == false)
+            {
+                Console.WriteLine("Интернет не подключен, в итоговый расчет это не будет включено");
+            }
+
+            if (internetPay == false)
+            {
+                double total = Math.Round((((PRSapartArea * 44.25) * (1 + (0.04 * PRSfloorNumb))) + (PRSelectricity * 4.7) + (PRShotWater * 80.15) + (PRScoldWater * 48.72) + (PRSgas * 2.42) + (PRSheating * 1273)), 2);
+                string STRtotal = total.ToString("N2");
+                char separator = ',';
+                string[] STRseparatedTotal = STRtotal.Split(separator);
+                Console.WriteLine("\nИтоговая сумма: " + STRseparatedTotal[0] + " руб. " + STRseparatedTotal[1] + " коп.");
+            }
+            else if (internetPay == true)
+            {
+                double total = Math.Round(((((PRSapartArea * 44.25) * (1 + (0.04 * PRSfloorNumb))) + (PRSelectricity * 4.7) + (PRShotWater * 80.15) + (PRScoldWater * 48.72) + (PRSgas * 2.42) + (PRSheating * 1273) + 400)), 2);
+                string STRtotal = total.ToString("N2");
+                char separator = ',';
+                string[] STRseparatedTotal = STRtotal.Split(separator);
+                Console.WriteLine("\nИтоговая сумма: " + STRseparatedTotal[0] + " руб. " + STRseparatedTotal[1] + " коп.");
+            }
+
+            Console.ReadLine();
         }
     }
 }
