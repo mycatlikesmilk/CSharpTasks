@@ -25,9 +25,9 @@
             string b = Console.ReadLine();
             string c = Console.ReadLine();
 
-            double aParse = int.Parse(a);
-            double bParse = int.Parse(b);
-            double cParse = int.Parse(c);
+            double aParse = double.Parse(a);
+            double bParse = double.Parse(b);
+            double cParse = double.Parse(c);
 
             double D = Math.Pow(bParse, 2) - 4 * aParse * cParse;
 
