@@ -38,7 +38,7 @@
 
             if (disc == 0)
             {
-                double x1 = (-bd + Math.Sqrt(disc)) / (2d * ad);
+                double x1 = -bd  / (2d * ad);
                 Console.WriteLine($"Входные данные:\na = {a}\nb = {b}\nc = {c}");
                 Console.WriteLine("Выходные данные: ");
                 Console.WriteLine($"x = {x1}");
