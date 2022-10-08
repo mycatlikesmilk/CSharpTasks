@@ -22,6 +22,40 @@
         static void Main(string[] args)
         {
 
+            // Ввод переменных от юзера
+
+            string a = Console.ReadLine();
+            string b = Console.ReadLine();
+            string c = Console.ReadLine();
+
+            //конвертация 
+
+            double adisc = Convert.ToDouble(a);
+            double bdisc = Convert.ToDouble(b);
+            double cdisc = Convert.ToDouble(c);
+
+            double discriminant = Math.Pow(bdisc, 2) - 4 * (adisc) * (cdisc);
+
+            if (discriminant == 0)
+            {
+                double xsqrt1 = (-bdisc + Math.Sqrt(discriminant)) / (2 * adisc);
+
+                Console.WriteLine($"x={xsqrt1}");
+
+            }
+            else if (discriminant > 0)
+            {
+                double xsqrt1 = (-bdisc + Math.Sqrt(discriminant)) / (2 * adisc);
+                double xsqrt2 = (-bdisc - Math.Sqrt(discriminant)) / (2 * adisc);
+
+                Console.WriteLine($"Первый корень равен{xsqrt1}");
+                Console.WriteLine($"Второй корень равен{xsqrt2}");
+            }
+            else if (discriminant < 0)
+            {
+                Console.WriteLine("Корней нет");
+            }
+            Console.ReadKey(true);
         }
     }
 }
