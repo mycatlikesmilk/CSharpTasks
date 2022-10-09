@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "nexo*", "wakan*", "funnydogg*", "mycatlikesmilk*" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "task*" ]
 
 jobs:
   build:
