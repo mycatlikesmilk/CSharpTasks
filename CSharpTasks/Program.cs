@@ -17,7 +17,33 @@
 
         static void Main(string[] args)
         {
-            // test2
+            // int f = 4;
+            int x = 1;
+            if (true)
+            {
+                if (true)
+                {
+                    if (true)
+                    {
+                        if (true)
+                        {
+                            if (true)
+                            {
+                                if (true)
+                                {
+                                    if (true)
+                                    {
+                                        if (true)
+                                        {
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
