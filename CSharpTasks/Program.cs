@@ -15,9 +15,10 @@
         static void Main(string[] args)
         {
             string enter = Console.ReadLine();
-            double cifra = double.Parse(enter);
-            string output = cifra.ToString("N10");
+            double number = double.Parse(enter);
+            string output = number.ToString("N10");
             Console.WriteLine(output);
+            Console.ReadLine();
         }
     }
 }
