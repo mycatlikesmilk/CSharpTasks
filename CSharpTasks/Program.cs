@@ -38,7 +38,7 @@
 
             if (discriminant == 0)
             {
-                double xsqrt1 = (-bdisc + Math.Sqrt(discriminant)) / (2 * adisc);
+                double xsqrt1 = -bdisc  / (2 * adisc);
 
                 Console.WriteLine($"x={xsqrt1}");
 
